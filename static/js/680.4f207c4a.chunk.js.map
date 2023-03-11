@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/680.4f207c4a.chunk.js","mappings":"6IAMA,UAJiB,SAAXA,IACJ,OAAOA,CAER,C","sources":["pages/HomePage/HomePage.jsx"],"sourcesContent":["// import Movies from 'Modules/Movies/Movies';\n\nconst HomePage = () => {\n  return HomePage\n  // <Movies />;\n};\nexport default HomePage;\n"],"names":["HomePage"],"sourceRoot":""}
