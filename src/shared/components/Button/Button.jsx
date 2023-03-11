@@ -1,13 +1,13 @@
 import styles from './button.module.css';
 
-const Button = ({ removeContact, id }) => {
+const Button = ({ children, type = 'submit' }) => {
   return (
     <button
       // onClick={() => removeContact(id)}
-      className={`${styles.btn} ${styles.deleteBtn}`}
-      type="button"
+      className={`${styles.btn}`}
+      type={type}
     >
-      Delete
+      {children}
     </button>
   );
 };
