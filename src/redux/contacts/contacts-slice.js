@@ -7,8 +7,7 @@ import {
 } from './contacts-operations';
 
 const initialState = {
-  items: [
-  ],
+  items: [],
   loading: false,
   error: null,
 };

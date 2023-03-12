@@ -3,16 +3,16 @@ import { BrowserRouter } from 'react-router-dom';
 
 import UserRoutes from './UserRoutes';
 import Phonebook from '../Modules/Phonebook/Phonebook';
-import NavbarAuth from '../Modules/Navbar/NavbarAuth/NavbarAuth';
+import Navbar from '../Modules/Navbar/Navbar';
 import { store } from '../redux/store';
 
 export function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <NavbarAuth />
+        <Navbar />
         < UserRoutes/>
-        <Phonebook />
+        {/* <Phonebook /> */}
       </BrowserRouter>
     </Provider>
   );

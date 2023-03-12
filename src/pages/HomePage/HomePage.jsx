@@ -1,7 +1,6 @@
-// import Movies from 'Modules/Movies/Movies';
-
 const HomePage = () => {
-  return HomePage
-  // <Movies />;
+  return (
+  <h3>HomePage</h3>
+)
 };
 export default HomePage;
