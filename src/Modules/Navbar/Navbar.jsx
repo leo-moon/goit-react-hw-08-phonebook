@@ -14,14 +14,15 @@ const Navbar = () => {
   const isLogin = useSelector(isUserLogin);
 
   console.log(isLogin);
-
-  const elements = items.map(({ id, text, link }) => (
-    <li key={id}>
-      <NavLink className={styles.link} to={link}>
-        {text}
-      </NavLink>
-    </li>
-  ));
+const filterItems = isLogin ? items : items.filter(item => !item.private);
+const elements = filterItems.map(({ id, text, link }) => (
+  <li key={id}>
+    <NavLink className={styles.link} to={link}>
+      {text}
+    </NavLink>
+  </li>
+));
+  
   return (
     <div className={styles.navbar}>
       <Link to="/">Logo</Link>
