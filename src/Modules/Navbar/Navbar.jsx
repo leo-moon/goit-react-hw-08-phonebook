@@ -2,7 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import NavbarAuth from './NavbarAuth/NavbarAuth';
-import NavbarUser from './NavbarUser/NavbarUser';
+import NavbarUser from './UserMenu/UserMenu';
 
 import { isUserLogin } from '../../redux/auth/auth-selectors';
 
