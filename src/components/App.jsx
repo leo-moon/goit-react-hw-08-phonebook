@@ -9,9 +9,9 @@ import { store } from '../redux/store';
 export function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/goit-react-hw-08-phonebook/">
         <Navbar />
-        < UserRoutes/>
+        <UserRoutes />
         {/* <Phonebook /> */}
       </BrowserRouter>
     </Provider>
