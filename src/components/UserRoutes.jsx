@@ -14,18 +14,12 @@ const PhonebookPage = lazy(() =>
 );
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
-// const SingleMoviePage = lazy(() =>
-//   import('../pages/MovieDetails/MovieDetails')
-//);
-// const CastPage = lazy(() => import('pages/CastPage/CastPage'));
-// const ReviewPage = lazy(() => import('pages/ReviewsPage/ReviewsPage'));
-
 const UserRoutes = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route element={<PublicRoute />} >
+        <Route element={<PublicRoute />}>
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
         </Route>
@@ -33,11 +27,6 @@ const UserRoutes = () => {
         <Route element={<PrivateRoute />}>
           <Route path="/contacts" element={<PhonebookPage />} />
         </Route>
-
-        {/* <Route path="/:media_type/:id" element={<SingleMoviePage />}>
-          <Route path="cast" element={<CastPage />} />
-          <Route path="reviews" element={<ReviewPage />} />
-        </Route> */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>

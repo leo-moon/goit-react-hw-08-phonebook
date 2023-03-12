@@ -21,14 +21,3 @@ export const deleteContact = async id => {
 
   return data;
 };
-
-
-
-
-      // if (error.response.status === 404) {
-      //   toast.info("There is no such user's collection!");
-      // } else if (error.response.status === 500) {
-      //   toast.error('Oops! Server error! Please try later!');
-      // } else {
-      //   toast.error('Something went wrong! Please reload the page!');
-      // }
