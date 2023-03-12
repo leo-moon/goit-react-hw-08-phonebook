@@ -19,7 +19,6 @@ const LoginPage = () => {
   return (
     <div>
       <h3>LoginPage</h3>
-
       <LoginForm onSubmit={handleLogin} />
     </div>
   );

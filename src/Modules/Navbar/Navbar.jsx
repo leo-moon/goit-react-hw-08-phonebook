@@ -12,6 +12,9 @@ import styles from './navbar.module.css';
 
 const Navbar = () => {
   const isLogin = useSelector(isUserLogin);
+
+  console.log(isLogin);
+
   const elements = items.map(({ id, text, link }) => (
     <li key={id}>
       <NavLink className={styles.link} to={link}>

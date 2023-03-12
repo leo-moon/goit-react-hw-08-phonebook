@@ -8,7 +8,7 @@ const NavbarUser = () => {
   const { name } = useSelector(getUser);
   return (
     <div>
-      {name}, <button>Logout</button>
+      {name && 'Hey'}, <button>Logout</button>
     </div>
   );
 };

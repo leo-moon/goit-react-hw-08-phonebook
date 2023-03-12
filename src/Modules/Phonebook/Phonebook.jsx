@@ -5,6 +5,8 @@ import styles from './phonebook.module.scss';
 import ContactForm from './ContactForm/ContactForm';
 import FindContact from './FindContact/FindContact';
 import Button from 'Modules/Button/Button';
+// import Button from '../../shared/components/Button/Button';
+
 
 import {
   fetchAllContacts,
@@ -27,9 +29,9 @@ const Phonebook = () => {
     dispatch(fetchAllContacts());
   }, [dispatch]);
 
-  const handleAddContact = ({ name, phone }) => {
+  const handleAddContact = ({ name, number }) => {
     //----------------------  add friends filter ???
-    dispatch(fetchAddContact({ name, phone }));
+    dispatch(fetchAddContact({ name, number }));
   };
 
   const removeContact = id => {
@@ -40,12 +42,15 @@ const Phonebook = () => {
     dispatch(setFilter(target.value));
   };
   console.log(filter);
-  const elementsLi = contactsFilter.map(({ id, name, phone }) => (
+  const elementsLi = contactsFilter.map(({ id, name, number }) => (
     <li className={styles.li} key={id}>
       <div>
-        {name} : {phone}
+        {name} : {number}
       </div>
       <Button removeContact={removeContact} id={id} />
+      {/* <Button removeContact={removeContact} id={id}>
+        Delete
+      </Button> */}
     </li>
   ));
   const elements =

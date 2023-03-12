@@ -17,41 +17,43 @@ const contactsSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(fetchAllContacts.pending, store => {
-        store.loading = true;
+      .addCase(fetchAllContacts.pending, state => {
+        state.loading = true;
       })
-      .addCase(fetchAllContacts.fulfilled, (store, { payload }) => {
-        store.loading = false;
-        store.items = payload;
+      .addCase(fetchAllContacts.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.items = payload;
       })
-      .addCase(fetchAllContacts.rejected, (store, { payload }) => {
-        store.loading = false;
-        store.error = payload;
-      })
-
-      .addCase(fetchAddContact.pending, store => {
-        store.loading = true;
-      })
-      .addCase(fetchAddContact.fulfilled, (store, { payload }) => {
-        store.loading = false;
-        store.items.push(payload);
-      })
-      .addCase(fetchAddContact.rejected, (store, { payload }) => {
-        store.loading = false;
-        store.error = payload;
+      .addCase(fetchAllContacts.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
       })
 
-      .addCase(fetchDeleteContact.pending, store => {
-        store.loading = true;
+      .addCase(fetchAddContact.pending, state => {
+        state.loading = true;
       })
-      .addCase(fetchDeleteContact.fulfilled, (store, { payload }) => {
-        store.loading = false;
-        const index = store.items.findIndex(({ id }) => id === payload);
-        store.items.splice(index, 1);
+      .addCase(fetchAddContact.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.items.push(payload);
       })
-      .addCase(fetchDeleteContact.rejected, (store, { payload }) => {
-        store.loading = false;
-        store.error = payload;
+      .addCase(fetchAddContact.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+
+      .addCase(fetchDeleteContact.pending, state => {
+        state.loading = true;
+      })
+      .addCase(fetchDeleteContact.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        console.log(payload);
+
+        const index = state.items.findIndex(({ id }) => id === payload);
+        state.items.splice(index, 1);
+      })
+      .addCase(fetchDeleteContact.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
       });
   },
 });

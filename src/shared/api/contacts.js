@@ -1,20 +1,34 @@
-import axios from 'axios';
+import instance from "./auth";
 
-const contactsInstance = axios.create({
-  baseURL: 'https://6401b864ab6b7399d0aac6a5.mockapi.io/api/phonebook',
-});
+// const contactsInstance = axios.create({
+//   baseURL: 'https://6401b864ab6b7399d0aac6a5.mockapi.io/api/phonebook',
+// });
 
 export const fetchContacts = async () => {
-  const { data } = await contactsInstance.get('/');
+  const { data } = await instance.get('/contacts');
   return data;
 };
 
 export const addContact = async data => {
-  const { data: result } = await contactsInstance.post('/', data);
+  console.log(data)
+  const { data: result } = await instance.post('/contacts', data);
   return result;
 };
 
 export const deleteContact = async id => {
-  const { data } = await contactsInstance.delete(`/${id}`);
+  // const { data } = await instance.delete(`/contacts/${id}`);
+  const { data } = await instance.delete(`/contacts/${id}`);
+
   return data;
 };
+
+
+
+
+      // if (error.response.status === 404) {
+      //   toast.info("There is no such user's collection!");
+      // } else if (error.response.status === 500) {
+      //   toast.error('Oops! Server error! Please try later!');
+      // } else {
+      //   toast.error('Something went wrong! Please reload the page!');
+      // }

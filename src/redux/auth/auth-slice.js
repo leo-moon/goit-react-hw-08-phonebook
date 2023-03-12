@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { signup, login } from './auth-operations';
+import { signup, login, current } from './auth-operations';
 
 const initialState = {
   user: {},
@@ -15,7 +15,7 @@ const authSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(signup.pending, (state, { payload }) => {
+      .addCase(signup.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
@@ -30,7 +30,7 @@ const authSlice = createSlice({
         state.error = payload;
       })
 
-      .addCase(login.pending, (state, { payload }) => {
+      .addCase(login.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
@@ -41,6 +41,21 @@ const authSlice = createSlice({
         state.isLogin = true;
       })
       .addCase(login.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+
+      .addCase(current.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(current.fulfilled, (state, { payload }) => {
+        console.log(payload)
+        state.loading = false;
+        state.user = payload;
+        state.isLogin = true;
+      })
+      .addCase(current.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
       });
