@@ -1,8 +1,9 @@
 import { useDispatch } from 'react-redux';
 
 import { login } from '../../redux/auth/auth-operations';
-
 import LoginForm from '../../Modules/LoginForm/LoginForm';
+
+import styles from './login-page.module.css';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -12,8 +13,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h2>LoginPage</h2>
+    <div className={styles.div}>
       <LoginForm onSubmit={handleLogin} />
     </div>
   );

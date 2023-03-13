@@ -3,10 +3,15 @@
     text-align: center;
     /* margin-right: auto; */
 }
+.p_span {
+        /* display: flex; */
+justify-content: center;
+}
 
 .title {
     font-weight: 500;
     font-size: 35px;
+    margin-bottom: 15px;
 }
 
 .text {
@@ -16,10 +21,15 @@
     font-size: 30px;
     font-weight: 700;
     /* background: linear-gradient(to right,#833ab4,#f50057,#fcb045,#b345fc) 47% 0; */
-    /* background: linear-gradient(to right,#0087f5,#f6ee01);
+    background: linear-gradient(to right,#0087f5,#d9d435);
 
         -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
+    -webkit-text-fill-color: transparent;
     color: rgb(247, 125, 125);
-    margin-top: 15px;
+    /* margin-top: 15px; */
+}
+
+.span {
+    background: none;
+    font-size: 30px;
 }

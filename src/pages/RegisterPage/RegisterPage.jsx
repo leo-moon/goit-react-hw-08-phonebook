@@ -2,7 +2,9 @@ import { useDispatch } from 'react-redux';
 
 import { signup } from '../../redux/auth/auth-operations';
 
-import RegisterForm from '../../Modules/RegisterForm/RegisterForm';
+import RegisterForm from 'Modules/RegisterForm/RegisterForm';
+
+import styles from './register-page.module.css';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
@@ -12,10 +14,9 @@ const RegisterPage = () => {
   };
 
   return (
-    <>
-      <h2>RegisterPage</h2>
+    <div className={styles.div}>
       <RegisterForm onSubmit={handleSignup} />
-    </>
+    </div>
   );
 };
 
