@@ -1,0 +1,25 @@
+.div {    
+    padding: 40px 0;
+    text-align: center;
+    /* margin-right: auto; */
+}
+
+.title {
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.text {
+    width: calc(65%);
+        margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    font-weight: 700;
+    /* background: linear-gradient(to right,#833ab4,#f50057,#fcb045,#b345fc) 47% 0; */
+    /* background: linear-gradient(to right,#0087f5,#f6ee01);
+
+        -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    color: rgb(247, 125, 125);
+    margin-top: 15px;
+}
