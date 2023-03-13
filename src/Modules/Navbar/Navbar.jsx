@@ -25,7 +25,7 @@ const elements = filterItems.map(({ id, text, link }) => (
   
   return (
     <div className={styles.navbar}>
-      <Link to="/">Logo</Link>
+      {/* <Link to="/">Logo</Link> */}
       <ul className={styles.menu}>{elements}</ul>
       {!isLogin && <NavbarAuth />}
       {isLogin && <NavbarUser />}
